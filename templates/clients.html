@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>العملاء</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>العملاء</h1>
+        <a href="{{ url_for('dashboard') }}">العودة للوحة التحكم</a> |
+        <a href="{{ url_for('client_form') }}">إضافة عميل جديد</a> |
+        <a href="{{ url_for('export_clients') }}">تصدير Excel</a>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>الشركة</th>
+                    <th>البريد الإلكتروني</th>
+                    <th>المواصفة</th>
+                    <th>رقم الشهادة</th>
+                    <th>تاريخ قرار المنح</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                    <tr>
+                        <td>{{ client.company_name }}</td>
+                        <td>{{ client.email }}</td>
+                        <td>{{ client.specification_id }}</td>
+                        <td>{{ client.certificate_number }}</td>
+                        <td>{{ client.grant_date }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

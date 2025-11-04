@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة التحكم</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>لوحة التحكم</h1>
+        <nav>
+            <a href="{{ url_for('clients') }}">العملاء</a> |
+            <a href="{{ url_for('users') }}">المستخدمين</a> |
+            <a href="{{ url_for('change_password') }}">تغيير كلمة المرور</a> |
+            <a href="{{ url_for('logout') }}">تسجيل الخروج</a>
+        </nav>
+    </header>
+    <main>
+        <h2>إحصائيات</h2>
+        <p>إجمالي العملاء: {{ total_clients }}</p>
+        {% if alert_clients %}
+            <div class="alert">
+                <strong>تنبيه:</strong> هناك عملاء يحتاجون لتجديد المنح!
+                <ul>
+                    {% for c in alert_clients %}
+                        <li>{{ c.company_name }} - منذ {{ (datetime.utcnow().date() - c.grant_date).days }} يوم</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </main>
+</body>
+</html>

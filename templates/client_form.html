@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>إضافة/تعديل العميل</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>إضافة/تعديل العميل</h1>
+        <a href="{{ url_for('clients') }}">العودة للعملاء</a>
+    </header>
+    <main>
+        <form method="POST">
+            <label>اسم الشركة</label>
+            <input type="text" name="company_name" required>
+            
+            <label>البريد الإلكتروني</label>
+            <input type="email" name="email" required>
+            
+            <label>المواصفة</label>
+            <select name="specification_id" required>
+                {% for spec in specs %}
+                    <option value="{{ spec.id }}">{{ spec.name }}</option>
+                {% endfor %}
+            </select>
+            
+            <button type="submit">حفظ</button>
+        </form>
+    </main>
+</body>
+</html>

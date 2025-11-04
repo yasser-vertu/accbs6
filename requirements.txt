@@ -1,0 +1,7 @@
+Flask==3.2.2
+Flask-SQLAlchemy==3.0.5
+Flask-Migrate==4.0.4
+Flask-Mail==1.0.0
+pandas==2.1.0
+openpyxl==3.1.2
+gunicorn==21.2.0
