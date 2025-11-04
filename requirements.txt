@@ -5,3 +5,6 @@ Flask-Mail
 pandas==2.2.2
 openpyxl==3.1.2
 gunicorn==21.2.0
+numpy==1.26.4
+python-dateutil
+pytz
