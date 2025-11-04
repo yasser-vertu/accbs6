@@ -2,7 +2,7 @@ Flask
 Flask-SQLAlchemy==3.0.5
 Flask-Migrate==4.0.4
 Flask-Mail
-pandas==2.2.2
+pandas==2.1.4
 openpyxl==3.1.2
 gunicorn==21.2.0
 numpy==1.26.4
