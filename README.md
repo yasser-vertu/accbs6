@@ -28,4 +28,4 @@
 ### 1. استنساخ المشروع
 ```bash
 git clone https://github.com/yasser-vertu/accbs6.git
-cd accbs6
+cd accbs6"# accbs6" 
